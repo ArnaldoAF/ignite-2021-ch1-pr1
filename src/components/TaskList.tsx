@@ -17,7 +17,6 @@ export function TaskList() {
   function handleCreateNewTask() {
     // Crie uma nova task com um id random, não permita criar caso o título seja vazio.
     if(newTaskTitle == null || newTaskTitle.trim() === '') return;
-    debugger;
     const newTitle = newTaskTitle;
     const randomId = Date.now();
     const newTask = {
@@ -31,10 +30,6 @@ export function TaskList() {
     setTasks(tempList);
 
   }
-
-  useEffect(()=>{
-    console.log(tasks)
-  }, [tasks])
 
   function handleToggleTaskCompletion(id: number) {
     // Altere entre `true` ou `false` o campo `isComplete` de uma task com dado ID
